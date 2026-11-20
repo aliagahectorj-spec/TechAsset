@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --color-ink-950: #0b1624;
+  --color-ink-900: #0f1b2d;
+  --color-ink-800: #17263b;
+  --color-ink-700: #22344d;
+  --color-teal-50: #f0fdfa;
+  --color-teal-100: #ccfbf1;
+  --color-teal-600: #0d9488;
+  --color-teal-700: #0f766e;
+  --color-teal-800: #115e59;
+  --color-paper: #f5f6f8;
+}
+
+html, body, #root { height: 100%; }
+body { background: var(--color-paper); color: #0f1b2d; font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+:focus-visible { outline: 2px solid var(--color-teal-600); outline-offset: 2px; }
+
+@keyframes pop { from { opacity: 0; transform: translateY(8px) scale(.98); } to { opacity: 1; transform: none; } }
+@keyframes toast-in { from { opacity: 0; transform: translateX(16px); } to { opacity: 1; transform: none; } }
+.anim-pop { animation: pop .18s ease-out; }
+.anim-toast { animation: toast-in .2s ease-out; }
+@media (prefers-reduced-motion: reduce) { .anim-pop, .anim-toast { animation: none; } }
